@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>个人简历网站</title>
+  <style>
+    /* 1. 整体布局 */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { height: 100%; font-family: sans-serif; }
+    .container {
+      display: flex;
+      height: 100%;
+    }
+
+    /* 2. 侧边栏 */
+    .sidebar {
+      width: 280px;
+      background: #f8f8f8;
+      border-right: 1px solid #e0e0e0;
+      padding: 20px;
+    }
+    .sidebar .profile {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .sidebar .profile img {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    .sidebar .profile h2 {
+      font-size: 20px; color: #333;
+    }
+    .sidebar nav ul {
+      list-style: none;
+    }
+    .sidebar nav li {
+      padding: 10px 15px;
+      cursor: pointer;
+      color: #555;
+      border-radius: 4px;
+      margin-bottom: 5px;
+      transition: background .2s, color .2s;
+    }
+    .sidebar nav li.active,
+    .sidebar nav li:hover {
+      background: #007acc;
+      color: #fff;
+    }
+
+    /* 3. 内容区 */
+    .content {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+    }
+    .content section {
+      display: none;
+    }
+    .content section.active {
+      display: block;
+    }
+    .content section h2 {
+      margin-bottom: 15px;
+      font-size: 24px;
+      color: #333;
+      border-bottom: 2px solid #007acc;
+      padding-bottom: 5px;
+    }
+    .content section p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    /* （可选）二级折叠内容样式 */
+    .content section details {
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 8px;
+    }
+    .content section details summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: #007acc;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- 左侧：头像 + 名字 + 导航 -->
+  <aside class="sidebar">
+    <div class="profile">
+      <img src="your-photo.jpg" alt="头像">
+      <h2>WY Chen</h2>
+    </div>
+    <nav>
+      <ul>
+        <li data-section="education" class="active">教育背景</li>
+        <li data-section="awards">获奖经历</li>
+        <li data-section="publications">论文发表</li>
+        <li data-section="projects">项目经历</li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- 右侧：各部分内容 -->
+  <main class="content">
+    <!-- 教育背景 -->
+    <section id="education" class="active">
+      <h2>教育背景</h2>
+      <details>
+        <summary>2020–至今：XXX 大学 博士研究生（离线强化学习）</summary>
+        <p>导师：XXX  研究方向：离线强化学习、三维重建。</p>
+      </details>
+      <details>
+        <summary>2018–2020：YYY 大学 硕士研究生（计算机视觉）</summary>
+        <p>导师：YYY  研究方向：多视图三维重建。</p>
+      </details>
+      <details>
+        <summary>2014–2018：ZZZ 大学 本科（计算机科学与技术）</summary>
+        <p>绩点：3.9/4.0，校优秀学生。</p>
+      </details>
+    </section>
+
+    <!-- 获奖经历 -->
+    <section id="awards">
+      <h2>获奖经历</h2>
+      <p>• 2023 ICCV 最佳论文候选奖候选名单</p>
+      <p>• AAMAS’21 最佳蓝天论文奖</p>
+      <p>• WAIC’22 云帆奖（闪耀之星）</p>
+    </section>
+
+    <!-- 论文发表 -->
+    <section id="publications">
+      <h2>论文发表</h2>
+      <p>1. Chen et al., “Unsupervised Specular Highlight Removal for 3D Reconstruction”, CVPR 2024.</p>
+      <p>2. Chen et al., “CasMVSNet: Combined Traditional and DL-based Multi-view Stereo”, ECCV 2023.</p>
+      <p>3. …</p>
+    </section>
+
+    <!-- 项目经历 -->
+    <section id="projects">
+      <h2>项目经历</h2>
+      <p>• 自建文化遗产文物三维重建数据集，包含陶瓷、青铜、唐三彩等。</p>
+      <p>• 基于 U-2-Net 的前景分割脚本，用于剔除背景干扰并统计图像质量。</p>
+      <p>• 在线留言板：Node.js + Express + SQLite 部署在 VPS。</p>
+    </section>
+  </main>
+</div>
+
+<script>
+  // 4. 简单的 Tab 切换逻辑
+  const tabs = document.querySelectorAll('.sidebar nav li');
+  const sections = document.querySelectorAll('.content section');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // 取消所有 tab 的激活状态
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // 隐藏所有内容区，显示对应的 section
+      const id = tab.getAttribute('data-section');
+      sections.forEach(sec => {
+        sec.classList.toggle('active', sec.id === id);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
