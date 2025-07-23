@@ -1,0 +1,168 @@
+/* 1. 全局重置与字体引入 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wwdt@400;500;700&display=swap');
+
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: #f0f2f5;
+  color: #333;
+}
+
+/* 2. 布局容器 */
+.container {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 3. 侧边栏 */
+.sidebar {
+  width: 280px;
+  background: #fff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .profile img {
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #007acc;
+  margin-bottom: 15px;
+  transition: transform .3s;
+}
+.sidebar .profile img:hover {
+  transform: scale(1.05);
+}
+
+.sidebar .profile h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+.sidebar nav ul {
+  width: 100%;
+  list-style: none;
+}
+.sidebar nav li {
+  padding: 12px 20px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background .2s, color .2s;
+}
+.sidebar nav li:hover {
+  background: #e6f4ff;
+}
+.sidebar nav li.active {
+  background: #007acc;
+  color: #fff;
+}
+
+/* 4. 主内容区 */
+.content {
+  flex: 1;
+  padding: 40px 60px;
+  overflow-y: auto;
+  background: #fafafa;
+}
+.content::-webkit-scrollbar {
+  width: 8px;
+}
+.content::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+.content section {
+  display: none;
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.content section.active {
+  display: block;
+}
+
+.content section h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #007acc;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #007acc;
+  padding-bottom: 6px;
+}
+
+.content section p {
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+/* 5. 折叠明细样式 */
+.content section details {
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 15px;
+  background: #fff;
+}
+.content section details summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  position: relative;
+  padding-left: 20px;
+  color: #007acc;
+}
+.content section details[open] summary {
+  color: #005a9e;
+}
+.content section details summary::before {
+  content: '▸';
+  position: absolute;
+  left: 0; top: 2px;
+  transition: transform .2s;
+}
+.content section details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+/* 6. 响应式（小屏幕） */
+@media (max-width: 768px) {
+  .container { flex-direction: column; }
+  .sidebar { width: 100%; flex-direction: row; overflow-x: auto; }
+  .sidebar .profile { display: none; }
+  .sidebar nav ul { display: flex; }
+  .sidebar nav li { margin-right: 10px; }
+  .content { padding: 20px; }
+  .content section { padding: 20px 15px; }
+}
+
+body.dark {
+    --bg: #222;
+    --fg: #eee;
+    --card-bg: #333;
+  }
+  body {
+    --bg: #fafafa;
+    --fg: #333;
+    --card-bg: #fff;
+    background: var(--bg);
+    color: var(--fg);
+  }
+  .content section { background: var(--card-bg); }
+  

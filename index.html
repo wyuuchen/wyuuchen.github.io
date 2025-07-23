@@ -3,90 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>个人简历网站</title>
-  <style>
-    /* 1. 整体布局 */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html { height: 100%; font-family: sans-serif; }
-    .container {
-      display: flex;
-      height: 100%;
-    }
+  <link rel="stylesheet" href="style.css">
 
-    /* 2. 侧边栏 */
-    .sidebar {
-      width: 280px;
-      background: #f8f8f8;
-      border-right: 1px solid #e0e0e0;
-      padding: 20px;
-    }
-    .sidebar .profile {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .sidebar .profile img {
-      width: 120px; height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 10px;
-    }
-    .sidebar .profile h2 {
-      font-size: 20px; color: #333;
-    }
-    .sidebar nav ul {
-      list-style: none;
-    }
-    .sidebar nav li {
-      padding: 10px 15px;
-      cursor: pointer;
-      color: #555;
-      border-radius: 4px;
-      margin-bottom: 5px;
-      transition: background .2s, color .2s;
-    }
-    .sidebar nav li.active,
-    .sidebar nav li:hover {
-      background: #007acc;
-      color: #fff;
-    }
-
-    /* 3. 内容区 */
-    .content {
-      flex: 1;
-      padding: 40px;
-      overflow-y: auto;
-    }
-    .content section {
-      display: none;
-    }
-    .content section.active {
-      display: block;
-    }
-    .content section h2 {
-      margin-bottom: 15px;
-      font-size: 24px;
-      color: #333;
-      border-bottom: 2px solid #007acc;
-      padding-bottom: 5px;
-    }
-    .content section p {
-      line-height: 1.6;
-      margin-bottom: 10px;
-      color: #444;
-    }
-
-    /* （可选）二级折叠内容样式 */
-    .content section details {
-      margin-bottom: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 8px;
-    }
-    .content section details summary {
-      cursor: pointer;
-      font-weight: bold;
-      color: #007acc;
-    }
-  </style>
 </head>
 <body>
 
@@ -171,6 +89,13 @@
     });
   });
 </script>
-
+<!-- 通用工具 -->
+<script src="js/utils.js"></script>
+<!-- 核心：Tab 切换（并把上次激活的 Tab 存 localStorage） -->
+<script src="js/tabs.js"></script>
+<!-- 可选：深浅色模式切换 -->
+<script src="js/theme.js"></script>
+<!-- 可选：侧边栏搜索过滤 -->
+<script src="js/filterNav.js"></script>
 </body>
 </html>
