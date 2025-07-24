@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>陈文宇</title>
+  <title>Hello wyChen</title>
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -12,8 +12,12 @@
   <!-- 左侧：头像 + 名字 + 导航 -->
   <aside class="sidebar">
     <div class="profile">
-      <img src="photo.jpg" alt="照片">
+      <img src="src/photo.jpg" alt="照片">
       <h2>陈文宇</h2>
+      <!-- 1. 自我介绍 -->
+      <p class="self-intro">热爱生活，科研必胜。</p>
+    <!-- 2. 隐藏/显示导航按钮 -->
+    <button id="toggleNav" class="toggle-nav-btn">隐藏导航</button>
     </div>
     <nav>
       <ul>
@@ -32,12 +36,8 @@
     <section id="education" class="active">
       <h2>教育背景</h2>
       <details>
-        <summary>2020–至今：XXX 大学 博士研究生（离线强化学习）</summary>
-        <p>导师：XXX  研究方向：离线强化学习、三维重建。</p>
-      </details>
-      <details>
-        <summary>2018–2020：YYY 大学 硕士研究生（计算机视觉）</summary>
-        <p>导师：YYY  研究方向：多视图三维重建。</p>
+        <summary>2023–至今：中北大学 博士研究生（复杂系统仿真与建模）</summary>
+        <p>导师：曾建潮  研究方向：离线强化学习</p>
       </details>
       <details>
         <summary>2019–2023：中北大学 本科（数据科学与大数据技术）</summary>
@@ -48,9 +48,10 @@
     <!-- 获奖经历 -->
     <section id="awards">
       <h2>获奖经历</h2>
-      <p>• 2023 ICCV 最佳论文候选奖候选名单</p>
-      <p>• AAMAS’21 最佳蓝天论文奖</p>
-      <p>• WAIC’22 云帆奖（闪耀之星）</p>
+          <p>• 2024-2025 中北大学博士研究生学业一等奖学金</p>-->
+<!--      <p>• 2023 ICCV 最佳论文候选奖候选名单</p>-->
+<!--      <p>• AAMAS’21 最佳蓝天论文奖</p>-->
+<!--      <p>• WAIC’22 云帆奖（闪耀之星）</p>-->
     </section>
 
     <!-- 论文发表 -->
@@ -64,9 +65,10 @@
     <!-- 项目经历 -->
     <section id="projects">
       <h2>项目经历</h2>
-      <p>• 自建文化遗产文物三维重建数据集，包含陶瓷、青铜、唐三彩等。</p>
-      <p>• 基于 U-2-Net 的前景分割脚本，用于剔除背景干扰并统计图像质量。</p>
-      <p>• 在线留言板：Node.js + Express + SQLite 部署在 VPS。</p>
+      <p> • 自建网站搭建 </p>
+<!--      <p>• 自建文化遗产文物三维重建数据集，包含陶瓷、青铜、唐三彩等。</p>-->
+<!--      <p>• 基于 U-2-Net 的前景分割脚本，用于剔除背景干扰并统计图像质量。</p>-->
+<!--      <p>• 在线留言板：Node.js + Express + SQLite 部署在 VPS。</p>-->
     </section>
 
     <section id="notes">
@@ -116,5 +118,7 @@
 <script src="js/theme.js"></script>
 <!-- 可选：侧边栏搜索过滤 -->
 <script src="js/filterNav.js"></script>
+
+<script src="js/hideNav.js"></script>
 </body>
 </html>
