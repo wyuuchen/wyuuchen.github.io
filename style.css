@@ -165,4 +165,54 @@ body.dark {
     color: var(--fg);
   }
   .content section { background: var(--card-bg); }
-  
+
+  /* ----------------- 学习笔记 ----------------- */
+#notes-list, #note-detail {
+  max-width: 800px;
+  margin: 20px auto;
+}
+.note-item {
+  background: #fff;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+.note-item h3 {
+  margin-bottom: 8px;
+  color: #007acc;
+  font-size: 18px;
+}
+.note-item .summary {
+  color: #444;
+  margin-bottom: 10px;
+}
+.note-item .btn-view {
+  background: #007acc;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.note-item .btn-view:hover {
+  background: #005a99;
+}
+
+#note-detail button#backToList {
+  background: none;
+  border: none;
+  color: #007acc;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+.note-full {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+.note-full h1, .note-full h2, .note-full h3 {
+  color: #005a9e;
+}

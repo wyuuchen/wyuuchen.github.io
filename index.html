@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<!-- Markdown 解析器 -->
-<script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
-<!-- KaTeX 渲染（或 MathJax）-->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
-<script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
-
 <head>
   <meta charset="UTF-8">
   <title>陈文宇</title>
@@ -28,6 +21,7 @@
         <li data-section="awards">获奖经历</li>
         <li data-section="publications">论文发表</li>
         <li data-section="projects">项目经历</li>
+        <li data-section="notes">学习笔记</li>
       </ul>
     </nav>
   </aside>
@@ -74,6 +68,14 @@
       <p>• 基于 U-2-Net 的前景分割脚本，用于剔除背景干扰并统计图像质量。</p>
       <p>• 在线留言板：Node.js + Express + SQLite 部署在 VPS。</p>
     </section>
+
+    <section id="notes">
+    <h2>学习笔记</h2>
+    <!-- 列表视图 -->
+    <div id="notes-list"></div>
+    <!-- 详情视图，初始隐藏 -->
+    <div id="note-detail" style="display:none;"></div>
+  </section>
   </main>
 </div>
 
@@ -98,16 +100,18 @@
 
 </script>
 
-<h1>我的研究笔记</h1>
-<div id="notes-container">
-  <!-- JS 会自动把每个 .md 渲染成一个 <section> -->
-</div>
-<script src="js/notes.js"></script>
+<!-- markdown-it 解析器 -->
+<script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+<!-- KaTeX（可选，渲染公式）-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
 
-<!-- 通用工具 -->
+<!-- 现有脚本 -->
 <script src="js/utils.js"></script>
-<!-- 核心：Tab 切换（并把上次激活的 Tab 存 localStorage） -->
 <script src="js/tabs.js"></script>
+<!-- 新增：笔记加载脚本 -->
+<script src="js/notes.js"></script>
 <!-- 可选：深浅色模式切换 -->
 <script src="js/theme.js"></script>
 <!-- 可选：侧边栏搜索过滤 -->
