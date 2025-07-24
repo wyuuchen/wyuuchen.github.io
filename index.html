@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+<!-- Markdown 解析器 -->
+<script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+<!-- KaTeX 渲染（或 MathJax）-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
 <head>
   <meta charset="UTF-8">
   <title>陈文宇</title>
@@ -88,7 +95,15 @@
       });
     });
   });
+
 </script>
+
+<h1>我的研究笔记</h1>
+<div id="notes-container">
+  <!-- JS 会自动把每个 .md 渲染成一个 <section> -->
+</div>
+<script src="js/notes.js"></script>
+
 <!-- 通用工具 -->
 <script src="js/utils.js"></script>
 <!-- 核心：Tab 切换（并把上次激活的 Tab 存 localStorage） -->
